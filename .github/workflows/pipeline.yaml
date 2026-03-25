@@ -3,8 +3,7 @@ name: SimplifyQA Pipeline Execute
 on:
   push:
     branches:
-      - main
-      - Har5H-Ag-patch-1
+      - master
 
 env:
   DOCKER_IMAGE: registry.devopsark.com/simplifyqa/pipeline-executor/v2:v5.27.1
