@@ -30,12 +30,12 @@ jobs:
       - name: Run Pipeline Executor
         run: |
           docker run --rm \
-            -e INPUT_PIPELINEID="${{ env.INPUT_PIPELINEID }}" \
-            -e INPUT_APIKEY="${{ env.INPUT_APIKEY }}" \
-            -e INPUT_APIURL="${{ env.INPUT_APIURL }}" \
-            -e INPUT_THRESHOLD="${{ env.INPUT_THRESHOLD }}" \
-            -e INPUT_VERBOSE="${{ env.INPUT_VERBOSE }}" \
-            -e INPUT_MAXRETRIES="${{ env.INPUT_MAXRETRIES }}" \
-            -e INPUT_RETRYINTERVAL="${{ env.INPUT_RETRYINTERVAL }}" \
-            -e INPUT_APITIMEOUT="${{ env.INPUT_APITIMEOUT }}" \
+            -e PIPELINEID="${{ env.INPUT_PIPELINEID }}" \
+            -e APIKEY="${{ env.INPUT_APIKEY }}" \
+            -e APIURL="${{ env.INPUT_APIURL }}" \
+            -e THRESHOLD="${{ env.INPUT_THRESHOLD }}" \
+            -e VERBOSE="${{ env.INPUT_VERBOSE }}" \
+            -e MAXRETRIES="${{ env.INPUT_MAXRETRIES }}" \
+            -e RETRYINTERVAL="${{ env.INPUT_RETRYINTERVAL }}" \
+            -e APITIMEOUT="${{ env.INPUT_APITIMEOUT }}" \
             "${{ env.DOCKER_IMAGE }}"
