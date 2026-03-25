@@ -1,0 +1,43 @@
+name: SimplifyQA Pipeline Execute
+
+on:
+  push:
+    branches:
+      - main
+      - Har5H-Ag-patch-1
+
+env:
+  DOCKER_IMAGE: registry.devopsark.com/simplifyqa/pipeline-executor/v2:v5.27.1
+  INPUT_PIPELINEID: 67
+  INPUT_APIKEY: U2FsdGVkX18ILxyiJwcq5TpKMKODHXnqFRY1TMunjG4p2f5x07LD669m6+3yuS+frDVhqy3rx924uD8jen2FpEae0nupnEauPvsveHDRM9SunDMsYUnzjUavJEw1tKocSSQQdJgApC/vRl0d/B4T0Aex0bNFwX8+c9WOAuvBBfNH8uUe+G74gF/sq2QAtDIx5CJSlu91CmP8vAPSpgLSHulBDcepH0DQTg5qTPH30pWaVqkjQJ8w/RzDPy1gTXvPWfAkkdzZwOAkpbaEVql6LlLS7e6i5Lt64nqwkjp1+0FvEQT2AzgZVyi9m211fKnqyMEWWLJVT0CP5/N/ILPIANJVFjLDg0M60DyN02m5vv4JACXczU/+WNDwE+m43fKQpH8lQSYTaq05zDJgF2IOAGrL88rfAveSGqqy54SvGXA=
+  INPUT_APIURL: https://uat.simplifyqa.com
+  INPUT_THRESHOLD: 20
+  INPUT_VERBOSE: true
+  INPUT_MAXRETRIES: 0
+  INPUT_RETRYINTERVAL: 20
+  INPUT_APITIMEOUT: 1000
+
+jobs:
+  execute:
+    name: Execute SimplifyQA Pipeline
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Login to Docker Registry
+        run: echo "${{ secrets.REGISTRY_PASSWORD }}" | docker login -u ${{ secrets.REGISTRY_USER }} --password-stdin registry.devopsark.com
+
+      - name: Pull Docker Image
+        run: docker pull ${{ env.DOCKER_IMAGE }}
+
+      - name: Run Pipeline Executor
+        run: |
+          docker run --rm \
+            -e INPUT_PIPELINEID="${{ env.INPUT_PIPELINEID }}" \
+            -e INPUT_APIKEY="${{ env.INPUT_APIKEY }}" \
+            -e INPUT_APIURL="${{ env.INPUT_APIURL }}" \
+            -e INPUT_THRESHOLD="${{ env.INPUT_THRESHOLD }}" \
+            -e INPUT_VERBOSE="${{ env.INPUT_VERBOSE }}" \
+            -e INPUT_MAXRETRIES="${{ env.INPUT_MAXRETRIES }}" \
+            -e INPUT_RETRYINTERVAL="${{ env.INPUT_RETRYINTERVAL }}" \
+            -e INPUT_APITIMEOUT="${{ env.INPUT_APITIMEOUT }}" \
+            "${{ env.DOCKER_IMAGE }}"
