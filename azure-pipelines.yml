@@ -19,3 +19,8 @@ steps:
   displayName: 'Run a multi-line script'
 - task: simplifyqa-pipeline-executor-v2@2
   inputs:
+    PIPELINEID: 46
+    APIKEY: 'U2FsdGVkX1/3A5ARCNNo8zE2Uk5207cZW2WATHWaMpL5psFk8yd7v5rVTNeA2+BsmbfxbULiTiyd/FNFxfctbfSrGY3yj/ShTyTFtXZ5M2jZR57oNomOsrg9fDNJkfLaSZj8sVHGWZC+IhDcq9pYYRlvGHX8LKafpGgHE4rL/OA6U/C1Lf2y4ayBjttXffdsFyTHnS2zd4wT26+MIz0T1qheeQtCX92Cmlb7a5FWI/wuYaiO5j+U4dIEPGDww7sHiBho2zU1HYdt4Gp/2jSqHQzgS0ic2YoFJyvSB3OjOquhC7JzPUT2duzKauvm2v5Bmj3r81Zo6n5Bz1G7uQrrz4Xr3HJ9L9OtCnOgI44DVBgXd4hETvcLVdmTxgKhBd3oH3w9D+f66uIfDOEmsPanmA5US2wusNYF6hhAtulJLUY='
+    APIURL: 'https://app.simplifyqa.ai'
+    THRESHOLD: 100
+    VERBOSE: false
