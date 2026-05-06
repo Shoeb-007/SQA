@@ -1,0 +1,26 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+- task: simplifyqa-pipeline-executor-v2@2
+  inputs:
+    PIPELINEID: 125
+    APIKEY: 'U2FsdGVkX1+hGWLVSvJzRmkRJO1XdW04lNSq1DuZsvJvLbJyBnW8Lwq4psYaLGx0o2K7Bzmbm2hFTYpbT674gsOh+pwTnu0raYPQRA0uKA00Z70MM5dy51Opr3S+u1SqdgPWCAEBQf1/TUufkFxyFqh0cXHl/W4rno0Y/nk48EYu/VqwGWqYc1S8yuZU7MlM99432UTxP5ZJqH8eDc4KnOq/S3qOR5LsiCnmV73RVRTlmMdBXiGTrjEB4mcaK5Ou876fdV8efA7lPmmgl9V0BssW+FxfJsU4djr0ap03iePK+bYWYMJoVXbF4gv3D2kSZmkbws2Dk3YJrrdyeG5nDkc5ABXC/13cQBCyG4nTnTvOUvK4/s2lU+F+DCUcvFAv7meQ/14ZC+I7qw1dXUU0B8yvmZ7kx4RvX9fpmav6+Ek='
+    APIURL: 'https://uat.simplifyqa.com'
+    THRESHOLD: 100
+    VERBOSE: false
