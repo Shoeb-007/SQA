@@ -21,6 +21,6 @@ steps:
   inputs:
     PIPELINEID: 139
     APIKEY: 'U2FsdGVkX1/S/elE+PDedf61ECqGEe4IMSiGvAqI6Oz6/u1WU0SxE2fUGXYFyC+088VHgiQVGkCyObNHtj/gj4I14+EkxkVXOfxG2FYWFN6S+Ib/geR8NoL7XN6Y1GSAuIHvOmiYhKHLsoGWrPEirJKl1Bd3Z3aWjgD7tgA/a26Qh6F+Uy1kaUDqvzauhAFfmV6xdPlFntiG2VbjvnIGrcKVos1D3iuvsxjReuovjFDHrMh24wgRY1RxTKTY2aWa9yrG1nmjFhOY/I/zb26pDtL2aRE0IkPGZys3ItazsKqDL3WbMajrKY4ik+h4EVC1uyj78b7yNjdSc+djVlRAbhTrlIzZNY2ZjgR1meKdxaDQd5GljNTyllV5BH38MRiPdetZkYZPq++brReSOWFxogCb/wln4DHYN5Xfi3xSYAk='
-    APIURL: 'https://uat.simplifyqa.com/'
+    APIURL: 'https://uat.simplifyqa.com'
     THRESHOLD: 100
     VERBOSE: false
