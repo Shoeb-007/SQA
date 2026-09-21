@@ -17,3 +17,10 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+- task: simplifyqa-pipeline-executor-v2@2
+  inputs:
+    PIPELINEID: 148
+    APIKEY: 'U2FsdGVkX1+/OCMsLJvErtuqx0HYVGfEm9mS9iWiqNuVMEjx7aFW9krYo1DnYWozCCXcm5M34zVuKhMvtF4/edqjc2vmHQy2gqAU5u850BaQ4xc2qz5Pb6IS27HuGwG/yWjyRc1LbneZBs5ad5JWYEihG54MIpLzAGYrzRiPH4NVhg0Fbjpn1+V4J4qMEThpoViLIRAi8lhWDxljJdZlaBwG4PPa7/mx266K1Lss/NQddqrkMTHQqioLtF2E4w9Gir4vTwbr5zQND2KV1jfNyehe9ipfBhSmgGBvWj/I/gRgNDUZu49T6En/7ge1UAgt+tnAeEoOYOLvzxxiqCRZ5RhX7Sc1CcKMZuz+rU3FsgNP0TnryQBWCO4K0x48O/5BpR6FXXNOSXbYVE1J3FOqjmtiIVzskfDvXSM2ZzgIsXo='
+    APIURL: 'https://uat.simplifyqa.com'
+    THRESHOLD: 100
+    VERBOSE: false
